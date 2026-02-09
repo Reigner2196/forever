@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6; /* Soft pink background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 50px;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute; /* Needed for the jumping effect */
+        }
+
+        #message {
+            display: none;
+            font-size: 1.5rem;
+            color: #d63384;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .heart-bg {
+            position: absolute;
+            color: #ffb3c1;
+            font-size: 20px;
+            z-index: 0;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainCard">
+        <div id="askContainer">
+            <h1>Will you be my Valentine? 🌹</h1>
+            <div class="buttons">
+                <button id="yesBtn">Yes!</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+
+        <div id="message">
+            I knew you would say yes! <br> 
+            Love you paithii papa ❤️
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const askContainer = document.getElementById('askContainer');
+        const message = document.getElementById('message');
+
+        // Function to move the "No" button
+        const moveButton = () => {
+            // Calculate random positions within the viewport
+            // Subtracting button dimensions so it doesn't go off-screen
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        };
+
+        // Trigger move on both mouse hover and touch (for mobile)
+        noBtn.addEventListener('mouseenter', moveButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevents clicking on mobile
+            moveButton();
+        });
+
+        // Show success message
+        yesBtn.addEventListener('click', () => {
+            askContainer.style.display = 'none';
+            message.style.display = 'block';
+            
+            // Optional: Alert fallback
+            // alert("I knew would say yes love you paithii papa");
+        });
+
+        // Initial position for the No button
+        noBtn.style.position = 'absolute';
+        // Set it near the Yes button initially
+        noBtn.style.left = 'calc(50% + 40px)';
+        noBtn.style.top = 'calc(50% + 20px)';
+    </script>
+</body>
+</html>

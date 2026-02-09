@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️ | Valentine's Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+        
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .heart:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            font-size: 1.8rem;
+            animation-delay: 0s;
+        }
+        
+        .heart:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            font-size: 2.5rem;
+            animation-delay: 1s;
+        }
+        
+        .heart:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            font-size: 1.5rem;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .message-box {
+            background-color: #fff9fb;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #ff758c;
+            width: 100%;
+        }
+        
+        .message-box h2 {
+            color: #ff4d7e;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .message-box p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .interactive-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .photo-frame {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .photo-placeholder {
+            height: 250px;
+            background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .photo-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+        
+        .love-meter {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .love-meter h3 {
+            color: #ff4d7e;
+            margin-bottom: 20px;
+        }
+        
+        .meter {
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .meter-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, #ffafbd, #ff758c);
+            border-radius: 15px;
+            transition: width 1s ease;
+        }
+        
+        .meter-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+        }
+        
+        .secret-message {
+            display: none;
+            background: #fff9fb;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+            border: 2px dashed #ff758c;
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .memory-box {
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .memory-box h3 {
+            color: #ff4d7e;
+            margin-bottom: 20px;
+        }
+        
+        .memory-text {
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff7eb3;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .interactive-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <h1>Happy Valentine's Day, My Love!</h1>
+            <p>You make every day feel like a celebration</p>
+        </div>
+        
+        <div class="content">
+            <div class="message-box">
+                <h2>To the Most Amazing Person in My Life</h2>
+                <p>My dearest, on this special day dedicated to love, I want to remind you how incredibly grateful I am to have you in my life. Every moment with you is a treasure, and my heart fills with joy whenever I see your smile. You are my sunshine on cloudy days, my comfort in difficult times, and my greatest happiness every single day.</p>
+                <p>I love the way you laugh, the way you care about others, and the way you make me a better person just by being you. Today and every day, I celebrate the incredible person you are and the beautiful love we share.</p>
+            </div>
+            
+            <div class="interactive-section">
+                <div class="photo-frame">
+                    <h3>Our Special Place</h3>
+                    <div class="photo-placeholder" i="">
+                        <img style="width: 94%;" src="C:/Users/dell/Videos/New%20folder/assets/1.jpg">
+                    </div>
+                    <p>This is where I'd put our favorite picture together. Every time I look at it, I'm reminded of how lucky I am to have you by my side.</p>
+                </div>
+                
+                <div class="love-meter">
+                    <h3>How Much I Love You</h3>
+                    <div class="meter">
+                        <div class="meter-fill" id="meterFill"></div>
+                        <div class="meter-text" id="meterText">Loading...</div>
+                    </div>
+                    <p>My love for you is immeasurable, but this meter tries to show just a fraction of it!</p>
+                    <button class="btn" id="loveBtn">Increase Love Meter</button>
+                    <div class="secret-message" id="secretMessage">
+                        <h3>💖 You've unlocked a secret message! 💖</h3>
+                        <p>No matter what the meter says, my love for you is infinite and grows stronger every day. You're the best thing that ever happened to me!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-box">
+                <h3>A Special Memory</h3>
+                <p class="memory-text">"I'll never forget the first time we met. Your smile lit up the room, and I knew right then that there was something special about you. Every moment since has been an incredible adventure, and I can't wait for all the memories we'll create together in the future."</p>
+                <p>Fill this with your own special memory that you cherish!</p>
+            </div>
+            
+            <button class="btn" id="finalMessageBtn">Click for a Special Valentine's Message</button>
+            <div class="secret-message" id="finalMessage">
+                <h3>💌 My Valentine's Promise to You 💌</h3>
+                <p>I promise to always cherish you, support your dreams, laugh with you, hold you when you need comfort, and love you more with each passing day. You are my forever Valentine, today and always.</p>
+                <p>With all my love,</p>
+                <p style="font-weight: bold; margin-top: 10px; font-size: 1.2rem;">Aravindh</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with ❤️ for the most wonderful person in the world</p>
+            <p>Happy Valentine's Day, my love!</p>
+        </div>
+    </div>
+
+    <script>
+        // Love meter functionality
+        let loveLevel = 100;
+        const meterFill = document.getElementById('meterFill');
+        const meterText = document.getElementById('meterText');
+        const loveBtn = document.getElementById('loveBtn');
+        const secretMessage = document.getElementById('secretMessage');
+        const finalMessageBtn = document.getElementById('finalMessageBtn');
+        const finalMessage = document.getElementById('finalMessage');
+        
+        // Update the love meter
+        function updateLoveMeter() {
+            meterFill.style.width = `${loveLevel}%`;
+            meterText.textContent = `${loveLevel}% Love`;
+            
+            // Change color based on level
+            if (loveLevel < 30) {
+                meterFill.style.background = "linear-gradient(to right, #ffafbd, #ff758c)";
+            } else if (loveLevel < 70) {
+                meterFill.style.background = "linear-gradient(to right, #ff758c, #ff4d7e)";
+            } else {
+                meterFill.style.background = "linear-gradient(to right, #ff4d7e, #d63384)";
+            }
+            
+            // Show secret message at 150%
+            if (loveLevel >= 150 && !secretMessage.style.display) {
+                secretMessage.style.display = 'block';
+            }
+        }
+        
+        // Initialize love meter
+        updateLoveMeter();
+        
+        // Love button click event
+        loveBtn.addEventListener('click', function() {
+            loveLevel += 10;
+            if (loveLevel > 200) {
+                loveLevel = 200;
+                loveBtn.textContent = "Maximum Love Reached!";
+                loveBtn.disabled = true;
+            }
+            updateLoveMeter();
+            
+            // Add floating heart effect
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = '1.5rem';
+            heart.style.color = '#ff4d7e';
+            heart.style.left = (Math.random() * 80 + 10) + '%';
+            heart.style.top = '50%';
+            heart.style.zIndex = '1000';
+            heart.style.animation = 'float 2s ease-in-out forwards';
+            
+            document.querySelector('.love-meter').appendChild(heart);
+            
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        });
+        
+        // Final message button
+        finalMessageBtn.addEventListener('click', function() {
+            finalMessage.style.display = 'block';
+            finalMessageBtn.textContent = "I Love You Forever!";
+            finalMessageBtn.style.background = "linear-gradient(to right, #d63384, #ff4d7e)";
+            
+            // Create falling hearts animation
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    heart.style.color = '#ff4d7e';
+                    heart.style.left = (Math.random() * 100) + 'vw';
+                    heart.style.top = '-50px';
+                    heart.style.zIndex = '9999';
+                    heart.style.opacity = '0.8';
+                    heart.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Remove heart after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 5000);
+                }, i * 150);
+            }
+        });
+        
+        // Add CSS for falling animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initial love meter animation
+        setTimeout(() => {
+            loveLevel = 85;
+            updateLoveMeter();
+        }, 500);
+    </script>
+</body>
+</html>
